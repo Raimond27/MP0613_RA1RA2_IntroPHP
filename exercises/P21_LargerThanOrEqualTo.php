@@ -1,18 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 class P21_LargerThanOrEqualTo
 {
     public function main(): void
     {
-        // Write your code here
-        // Prompt the user for input
+        echo "Give the first number: ";
 
-        // Get input from the user
-        
-        // Prompt the user for input
-        
-        // Get input from the user
+        $firstNumber = (int)trim(fgets($GLOBALS['STDIN'] ?? STDIN));
 
-        // Check year value
+        echo "Give the second number: ";
+
+        $secondNumber = (int)trim(fgets($GLOBALS['STDIN'] ?? STDIN));
+
+        if ($firstNumber > $secondNumber) {
+            echo "Greater number is: " . $firstNumber . "\n";
+        } elseif ($secondNumber > $firstNumber) {
+            echo "Greater number is: " . $secondNumber . "\n";
+        } else {
+            echo "The numbers are equal!\n";
+        }
     }
 }
+
+?>

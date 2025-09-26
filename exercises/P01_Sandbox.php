@@ -6,4 +6,3 @@ class P01_Sandbox {
         echo "Hello, World!";
     }
 }
-
