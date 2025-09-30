@@ -9,7 +9,8 @@ class P36_NumberAndSumOfNumbers
 
         while (true) {
             echo "Give a number:";
-            $input = (int) trim(fgets(STDIN));
+            // Corregido: lee la entrada desde STDIN
+            $input = (int) trim(fgets($GLOBALS['STDIN'] ?? STDIN));
 
             if ($input === 0) {
                 break;

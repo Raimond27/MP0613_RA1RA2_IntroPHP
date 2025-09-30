@@ -4,13 +4,13 @@ class P39_Counting
 {
     public function main(): void
     {
-        // Read input from stdin
-        $line = trim(fgets(STDIN));
+   
+        $line = trim(fgets($GLOBALS['STDIN']  ??  STDIN));
+
         $number = (int)$line;
 
-        // Print numbers from 0 to the input number
         for ($i = 0; $i <= $number; $i++) {
-            echo $i . PHP_EOL;
+            echo $i . "\n";
         }
     }
 }

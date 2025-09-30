@@ -4,17 +4,15 @@ class P41_FromWhereToWhere
 {
     public function main(): void
     {
-        $from = (int)trim(fgets(STDIN));
-        $to = (int)trim(fgets(STDIN));
+        $from = (int) trim(fgets($GLOBALS['STDIN']  ??  STDIN));
+        $to = (int) trim(fgets($GLOBALS['STDIN']  ??  STDIN));
 
-        // If from > to, print nothing
         if ($from > $to) {
-            return;
+            [$from, $to] = [$to, $from];
         }
 
-        // Print numbers from from to to (inclusive)
         for ($i = $from; $i <= $to; $i++) {
-            echo $i . PHP_EOL;
+            echo $i . "\n"; 
         }
     }
 }

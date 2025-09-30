@@ -7,7 +7,8 @@ class P38_AverageOfPositiveNumbers
         $numbers = [];
 
         while (true) {
-            $line = trim(fgets(STDIN));
+            $line = trim(fgets($GLOBALS['STDIN']  ??  STDIN));
+
             $number = (float)$line;
 
             if ($number === 0.0) {

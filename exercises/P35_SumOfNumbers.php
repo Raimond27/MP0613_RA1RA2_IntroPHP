@@ -8,7 +8,8 @@ class P35_SumOfNumbers
 
         while (true) {
             echo "Give a number:";
-            $input = (int) trim(fgets(STDIN));
+
+            $input = (int) trim(fgets($GLOBALS['STDIN'] ?? STDIN));
 
             if ($input === 0) {
                 break;

@@ -6,18 +6,18 @@ class P32_OnlyPositives
     {
         while (true) {
             echo "Give a number:";
-            $input = (int) trim(fgets(STDIN));
+            $input = trim(fgets($GLOBALS['STDIN']  ??  STDIN));
+            $number = (int)$input;
 
-            if ($input === 0) {
+            if ($number === 0) {
                 break;
             }
 
-            if ($input < 0) {
+            if ($number < 0) {
                 echo "Unsuitable number\n";
-                continue;
+            } else {
+                echo ($number * $number) . "\n";
             }
-
-            echo ($input * $input) . "\n";
         }
     }
 }
