@@ -9,10 +9,30 @@ class P44_Swap
         foreach ($array as $value) {
             echo $value . "\n";
         }
+        echo "\n"; 
+        $handle = fopen("php://stdin", "r");
 
-        echo "\n";
+        $index1_str =  trim(fgets($GLOBALS['STDIN']  ??  STDIN));
+        $index2_str =  trim(fgets($GLOBALS['STDIN']  ??  STDIN));
 
-        // Write your code here
-       
+        fclose($handle);
+
+        $index1 = (int)$index1_str;
+        $index2 = (int)$index2_str;
+
+        $arraySize = count($array);
+        if ($index1 >= 0 && $index1 < $arraySize &&
+            $index2 >= 0 && $index2 < $arraySize) {
+
+
+            $temp = $array[$index1];
+            $array[$index1] = $array[$index2];
+            $array[$index2] = $temp;
+        }
+
+        echo "\n"; 
+        foreach ($array as $value) {
+            echo $value . "\n";
+        }
     }
 }
